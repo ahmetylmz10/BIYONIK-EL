@@ -1,1 +1,113 @@
+#include <Servo.h>
 
+const int pot1=A0;
+
+const int pot2=A1;
+
+const int pot3=A2;
+
+const int pot4=A3;
+
+const int pot5=A4;
+
+Servo servo1;
+
+Servo servo2;
+
+Servo servo3;
+
+Servo servo4;
+
+Servo servo5;
+
+int flexdurum1=0;
+
+int flexdurum2=0;
+
+int flexdurum3=0;
+
+int flexdurum4=0;
+
+int flexdurum5=0;
+
+int pos1=0;
+
+int pos2=0;
+
+int pos3=0;
+
+int pos4=0;
+
+int pos5=0;
+
+void setup() {
+
+  // put your setup code here, to run once:
+
+  Serial.begin(9600);
+
+servo1.attach(3);
+
+servo2.attach(5);
+
+servo3.attach(6);
+
+servo4.attach(9);
+
+servo5.attach(10);
+
+}
+
+void loop() {
+
+flexdurum1=analogRead(pot1);
+
+pos1=map(flexdurum1,0,1023,0,180);
+
+{
+
+  servo1.write(pos1);
+
+}
+
+flexdurum2=analogRead(pot2);
+
+pos2=map(flexdurum2,0,1023,0,180);
+
+{
+
+  servo2.write(pos2);
+
+}
+
+flexdurum3=analogRead(pot3);
+
+pos3=map(flexdurum3,0,1023,0,180);
+
+{
+
+  servo3.write(pos3);
+
+}
+
+flexdurum4=analogRead(pot4);
+
+pos4=map(flexdurum4,0,1023,0,180);
+
+{
+
+  servo4.write(pos4);
+
+}
+
+flexdurum5=analogRead(pot5);
+
+pos5=map(flexdurum5,0,1023,0,180);
+
+{
+
+  servo5.write(pos5);
+
+}
+
+}
